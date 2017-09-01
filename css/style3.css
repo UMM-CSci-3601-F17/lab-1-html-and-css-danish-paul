@@ -7,21 +7,91 @@ use float to make something locate itself on the right or left
 
 */
 
+/* with this style we went for a GitHub markdown style (except for the images) */
 
+/* the keyframes for the fadein animation */
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
 
+/* set system fonts, background color, and fadein animation for the whole page */
 body{
+	line-height: 1.5;
+	color: #24292e;
 	/* use system fonts */
 	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    padding: 30px;
-    background-color: #FFFFFF;
+    font-size: 16px;
+  	line-height: 1.5;
+  	word-wrap: break-word;
+
+	box-sizing: border-box;
+	min-width: 200px;
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 45px;
+
     animation: fadein 2s; /* fade in entire page */
 }
 
+/* GitHub style links */
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
 
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin: 0.67em 0;
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-left: 2em;
+}
+
+/* grouping */
+/* the border-bottom here is what adds the lines under the headers */
+h1, h2 {
+	margin-top: 24px;
+	margin-bottom: 16px;
+	font-weight: 600;
+	line-height: 1.25;
+	padding-bottom: 0.3em;
+	border-bottom: 1px solid #eaecef;
+}
+
+
+li+li {
+  margin-top: 0.25em;
+}
+
+/* put the style selector links at the top and follow the margins and padding of the body */
+#style {
+	box-sizing: border-box;
+	position: absolute;
+	left: 0;
+    right: 0;
+    top: 0;
+	min-width: 200px;
+	max-width: 980px;
+	margin: 0 auto;
+	padding-left: 35px;
+	padding-right: 55px;
+	padding-top: 25px;
+
+}
+
+/* makes the list of styles not be styled like a normal ul */
 #style ul {
     list-style-type: none;
     margin: 0;
@@ -31,26 +101,24 @@ body{
 
 #style li {
     float: left;
+    margin-top: 0;
 }
 
 /* nesting */
 #style li a {
     display: block;
-    color: black;
     text-align: center;
-    padding: 8px 12px; /*this adds some spacing around the items in my style footer*/
-    text-decoration: none;
+    padding: 0px 10px;
 }
 
-#style li a:hover {
-    
-}
+
 
 #faculty>ul>li {
     display: inline-block;
     margin: 10px;
 }
 
+/* make the images have a set height, border radius, and transition effect */
 img.pic {
   height: 150px;
   display: inline-block;
@@ -61,6 +129,7 @@ img.pic {
   transition: all 0.3s;
 }
 
+/* make the images scale up slightly when hovered */
 img.pic:hover {
 	transform: scale(1.2);
 }
